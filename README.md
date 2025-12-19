@@ -26,12 +26,18 @@ This application demonstrates an interactive, RAG-based support ticket triage sy
 4. **Semantic Search for Relevant Knowledge**: Uses OpenAI embeddings (`text-embedding-3-small`) to find the top relevant FAQ and document that may provide guidance or have solved similar issues before.
 
 
-5. **Run GPT-based Triage**: The GPT-4o Mini model evaluates the latest customer message and classifies:  
-   - **Urgency**: critical / high / medium / low  
-   - **Issue Type**: from 14 most common support ticket types (e.g., Service Request, Outage, Feature Request, etc.) based on [medium.com/kommunicate/what-is-ticket-triage-in-customer-support-processes-and-tools](https://medium.com/kommunicate/what-is-ticket-triage-in-customer-support-processes-and-tools-4b9a1343925d)
-   - **Product**: plan/ feature/ system  
-   - **Customer Sentiment**: positive / frustrated / angry  
-   - **Reasoning**: a concise, 1-sentence explanation of the classification
+5. **Run GPT-based Triage**: The GPT-4o Mini model analyzes the latest customer message to:  
+
+- **Classify**:  
+  - **Urgency**: critical / high / medium / low  
+  - **Issue Type**: one of the 14 most common support ticket types (e.g., Service Request, Outage, Feature Request, etc.) based on [this guide](https://medium.com/kommunicate/what-is-ticket-triage-in-customer-support-processes-and-tools)  
+  - **Customer Sentiment**: positive / frustrated / angry  
+
+- **Extract**:  
+  - **Product**: relevant plan, feature, or system mentioned in the message  
+
+- **Reasoning**: a concise, 1-sentence explanation
+
 
 
 6. **Determine Next Action**: The system uses an explainable rule-based on top of the LLM results to decide the appropriate next step:
