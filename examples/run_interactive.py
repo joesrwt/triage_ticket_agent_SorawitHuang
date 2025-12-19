@@ -1,5 +1,3 @@
-# examples/run_interactive.py
-
 from app.triage import triage_ticket
 from app.tools.customer_history import CUSTOMER_HISTORY_DB
 import time
@@ -21,6 +19,7 @@ def main():
     # Step 2: Fetch customer history
     history = CUSTOMER_HISTORY_DB[selected_customer_id]
     profile = history["customer_profile"]
+    support_ctx = history.get("support_context", {})
     messages = history["conversation_history"]["messages"]
     latest_msg_obj = messages[-1]
     latest_msg = latest_msg_obj["message"]
@@ -31,6 +30,16 @@ def main():
     print("Customer Profile")
     print("===============================")
     for k, v in profile.items():
+        print(f"{k}: {v}")
+
+    print("\n===============================")
+    print("Customer Interaction Details")
+    print("===============================")
+    keys_to_show = ["first_time_contact", "first_contact_at", "total_unresolved_hours", "customer_follow_up_count"]
+    for k in keys_to_show:
+        v = support_ctx.get(k, None)
+        if hasattr(v, "strftime"):
+            v = v.strftime("%Y-%m-%d %H:%M")
         print(f"{k}: {v}")
 
     print("\n===============================")
