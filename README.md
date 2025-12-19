@@ -1,40 +1,49 @@
 # triage_ticket_agent_SorawitHuang
 
 
-# 🧠 Support Ticket Triage System (LLM + Embeddings)
+## 🧱 Architecture Overview
 
-This project demonstrates an end-to-end AI-powered support ticket triage system
-using OpenAI LLMs and semantic search with embeddings.
+This support ticket triage agent is built around a **RAG-based (Retrieval-Augmented Generation) architecture**. It retrieves relevant FAQs and documentation using embeddings, taking into account both the customer’s latest message and their support history as context.
 
----
+Key points:
+
+- **Agent workload reduction**: By surfacing previously resolved FAQs or documentation, agents save time otherwise spent re-explaining solutions.
+- **Reliability**: Leveraging historically verified FAQs and useful Docs ensures the guidance provided is accurate and consistent.
+- **Self-help for customers**: When an issue is generic or informational, the system can provide immediate guidance, reducing the need for human intervention.
+
+- **Mock Data**: Customer History and Knowledge Base are easy to replace or scale for more data.
 
 ## 🚀 What This App Does
 
-Given a `customer_id`, the system:
+This application demonstrates an interactive, RAG-based support ticket triage system. Using a customer ID, it performs the following steps:
 
-1. Retrieves customer support history
-2. Uses an LLM (GPT-4o Mini) to classify:
+1. **Select a Customer**: The user chooses from available customer IDs (e.g., FREE-0001, ENT-0001, PRO-0001).  
+
+2. **View Customer Profile**: Displays structured customer information such as plan, region, tenure, and seat count.
+
+3. **Review Conversation History**: Shows the latest message and previous context messages with timestamps, so the agent or user can understand the conversation flow.
+
+4. **Semantic Search for Relevant Knowledge**: Uses OpenAI embeddings (`text-embedding-3-small`) to find the top relevant FAQ and document that may provide guidance or have solved similar issues before.
+
+5. **Run LLM-based Triage**: The GPT-4o Mini model classifies:
    - urgency
    - issue type
    - product
-   - customer sentiment
-3. Searches FAQs and documentation using embeddings
-4. Calculates relevance scores (0–100%)
-5. Decides the next action:
-   - `auto_respond` (self-help chatbot)
-   - `route_to_specialist`
-   - `escalate_to_human`
+   - customer sentiment  
 
----
+6. **Determine Next Action**: The system uses a simple, explainable rule-based layer on top of the LLM and embedding retrieval results to decide the appropriate next step:
 
-## 🧱 Architecture Overview
+   - **`auto_respond`**: If the top relevant FAQ or document has a high relevance (≥ 80%) **and** the issue urgency is low or medium, the system provides self-help guidance automatically.  
 
-- **LLM**: GPT-4o Mini (ticket classification)
-- **Embeddings**: `text-embedding-3-small` (semantic search)
-- **Decision Layer**: deterministic, explainable rules
-- **Mock APIs**: customer history + knowledge base (easy to replace)
+   - **`escalate_to_human`**: If the urgency is critical **or** the customer has already followed up multiple times (≥ 3), the system flags the ticket for immediate human attention.
+     
+   - **`route_to_specialist`**: For all other cases, the system routes the ticket to a specialist team. 
 
----
+
+7. **Explainable Output**:  Provides a structured summary of the ticket: 
+   - urgency, issue type, product, sentiment, next action and reasoning
+   - top 1 relevant FAQ and Doc with content and relevance scores
+
 
 
 ---
@@ -59,6 +68,8 @@ Given a `customer_id`, the system:
    !python -m examples.run_interactive
 
 
-6. Paste OpenAI API key (1) for 
+6. Paste OpenAI API key :
+ - (1) for embeddings "text-embedding-3-small"
+ - (2) for GPT model "gpt-4o-mini"
 
-
+7. Select a customer ID from the list (type 1-3)
