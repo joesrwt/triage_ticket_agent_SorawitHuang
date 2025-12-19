@@ -6,8 +6,6 @@
 This project demonstrates an end-to-end AI-powered support ticket triage system
 using OpenAI LLMs and semantic search with embeddings.
 
-It is designed as a **practical AI Engineer assessment** example.
-
 ---
 
 ## 🚀 What This App Does
