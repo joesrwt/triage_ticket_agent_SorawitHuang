@@ -27,7 +27,7 @@ This application demonstrates an interactive, RAG-based support ticket triage sy
 
 
 5. **Run GPT-based Triage**  
-  `GPT-4o-mini` model analyzes to:
+  `GPT-4o-mini` model firstly analyzes customer messages to:
 
    - **Classify**  
      - **Urgency**: critical / high / medium / low  
@@ -42,7 +42,7 @@ This application demonstrates an interactive, RAG-based support ticket triage sy
 
 
 
-6. **Determine Next Action**: The system uses an explainable rule-based on top of the LLM results to decide the appropriate next step:
+6. **Determine Next Action**: The system uses an explainable rule-based on top of GPT results to decide the appropriate next step:
 
    - **`auto_respond`**: If the top relevant FAQ or document has a high relevance (≥ 80%) **and** the issue urgency is low or medium, the system provides **self-help guidance** automatically.  
 
