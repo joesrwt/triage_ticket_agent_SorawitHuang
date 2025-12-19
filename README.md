@@ -28,15 +28,15 @@ This application demonstrates an interactive, RAG-based support ticket triage sy
 
 5. **Run GPT-based Triage**: The GPT-4o Mini model analyzes the latest customer message to:  
 
-- **Classify**:  
+>- **Classify**:  
   - **Urgency**: critical / high / medium / low  
   - **Issue Type**: one of the 14 most common support ticket types (e.g., Service Request, Outage, Feature Request, etc.) based on [this guide](https://medium.com/kommunicate/what-is-ticket-triage-in-customer-support-processes-and-tools)  
   - **Customer Sentiment**: positive / frustrated / angry  
 
-- **Extract**:  
+>- **Extract**:  
   - **Product**: relevant plan, feature, or system mentioned in the message  
 
-- **Reasoning**: a concise, 1-sentence explanation
+>- **Reasoning**: a concise, 1-sentence explanation
 
 
 
