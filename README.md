@@ -27,7 +27,7 @@ This application demonstrates an interactive, RAG-based support ticket triage sy
 
 
 5. **Run GPT-based Triage**  
-   The GPT-4o Mini model analyzes the latest customer message to:
+  `GPT-4o-mini` model analyzes to:
 
    - **Classify**  
      - **Urgency**: critical / high / medium / low  
