@@ -7,10 +7,8 @@ This support ticket triage agent is built around a **RAG-based (Retrieval-Augmen
 
 Key points:
 
-- **Agent workload reduction**: By surfacing previously resolved FAQs or documentation, agents save time otherwise spent re-explaining solutions.
 - **Reliability**: Leveraging historically verified FAQs and useful Docs ensures the guidance provided is accurate and consistent.
 - **Self-help for customers**: When an issue is generic or informational, the system can provide immediate guidance, reducing the need for human intervention.
-
 - **Mock Data**: Customer History and Knowledge Base are easy to replace or scale for more data.
 
 ## 🚀 What This App Does
@@ -25,11 +23,14 @@ This application demonstrates an interactive, RAG-based support ticket triage sy
 
 4. **Semantic Search for Relevant Knowledge**: Uses OpenAI embeddings (`text-embedding-3-small`) to find the top relevant FAQ and document that may provide guidance or have solved similar issues before.
 
-5. **Run LLM-based Triage**: The GPT-4o Mini model classifies:
-   - urgency
-   - issue type
-   - product
-   - customer sentiment  
+
+5. **Run GPT-based Triage**: The GPT-4o Mini model evaluates the latest customer message and classifies:  
+   - **Urgency**: critical / high / medium / low  
+   - - **Issue Type**: from 14 most common support ticket types (e.g., Service Request, Outage, Feature Request, etc.) based on [medium.com/kommunicate/what-is-ticket-triage-in-customer-support-processes-and-tools](https://medium.com/kommunicate/what-is-ticket-triage-in-customer-support-processes-and-tools-4b9a1343925d)
+   - **Product**: plan/ feature/ system  
+   - **Customer Sentiment**: positive / frustrated / angry  
+   - **Reasoning**: a concise, 1-sentence explanation of the classification
+
 
 6. **Determine Next Action**: The system uses a simple, explainable rule-based layer on top of the LLM and embedding retrieval results to decide the appropriate next step:
 
