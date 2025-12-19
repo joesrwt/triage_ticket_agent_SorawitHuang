@@ -1,7 +1,8 @@
 import json
 from openai import OpenAI
 
-client = OpenAI()
+api_key = getpass.getpass("Enter your OpenAI API key: ")
+client = OpenAI(api_key=api_key). for 
 
 SYSTEM_PROMPT = """
 
