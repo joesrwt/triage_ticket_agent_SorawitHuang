@@ -11,6 +11,8 @@ Key points:
 - **Self-help for customers**: When an issue is generic or informational, the system can provide immediate guidance, reducing the need for human intervention.
 - **Mock Data**: Customer History and Knowledge Base are easy to replace or scale for more data.
 
+---
+
 ## 🚀 What This App Does
 
 This application demonstrates an interactive, RAG-based support ticket triage system. Using a customer ID, it performs the following steps:
@@ -32,7 +34,7 @@ This application demonstrates an interactive, RAG-based support ticket triage sy
    - **Reasoning**: a concise, 1-sentence explanation of the classification
 
 
-6. **Determine Next Action**: The system uses a simple, explainable rule-based layer on top of the LLM and embedding retrieval results to decide the appropriate next step:
+6. **Determine Next Action**: The system uses an explainable rule-based on top of the LLM results to decide the appropriate next step:
 
    - **`auto_respond`**: If the top relevant FAQ or document has a high relevance (≥ 80%) **and** the issue urgency is low or medium, the system provides self-help guidance automatically.  
 
@@ -44,7 +46,6 @@ This application demonstrates an interactive, RAG-based support ticket triage sy
 7. **Explainable Output**:  Provides a structured summary of the ticket: 
    - urgency, issue type, product, sentiment, next action and reasoning
    - top 1 relevant FAQ and Doc with content and relevance scores
-
 
 
 ---
