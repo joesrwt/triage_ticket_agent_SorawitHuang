@@ -52,7 +52,7 @@ def main():
         print("No previous messages.")
 
     # Step 4: Wait message before running triage
-    print("\nSearching for relevant Docs and FAQs that may have solved similar issues...")
+    print("\n[Please Wait] Searching for relevant Docs and FAQs that may have solved similar issues...")
     time.sleep(2)  # simulate wait
 
     # Step 5: Run triage
@@ -60,7 +60,7 @@ def main():
 
     # Step 6: Print explainable, structured output
     print("\n===============================")
-    print("Triage Result")
+    print("[Completed] Triage Result")
     print("===============================")
     print(f"Urgency: {result['urgency']}")
     print(f"Issue Type: {result['issue_type']}")
@@ -70,7 +70,7 @@ def main():
     print(f"Reasoning: {result['reasoning']}")
 
     print("\n===============================")
-    print("Recommended FAQ")
+    print("Top 1 Relevant FAQ Used as Context")
     print("===============================")
     faq = result["knowledge_base"]["faq"]
     print(f"ID: {faq['id']}")
@@ -79,7 +79,7 @@ def main():
     print(f"Relevance: {faq['relevance_score_percent']}%")
 
     print("\n===============================")
-    print("Recommended Document")
+    print("Top 1 Relevant Document Used as Context")
     print("===============================")
     doc = result["knowledge_base"]["doc"]
     print(f"ID: {doc['id']}")
