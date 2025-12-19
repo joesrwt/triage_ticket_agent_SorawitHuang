@@ -1,5 +1,6 @@
 import numpy as np
 from openai import OpenAI
+import getpass
 
 # -----------------------------
 # Setup OpenAI client
