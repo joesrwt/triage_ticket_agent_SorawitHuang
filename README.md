@@ -48,8 +48,8 @@ Given a `customer_id`, the system:
 1. Open **Google Colab**
 2. Clone the repository:
    ```bash
-   !git clone https://github.com/jowsrwt/triage_ticket_agent_SorawitHuang.git
-   %cd triage_ticket_agent_SorawitHuang
+   !git clone https://github.com/joesrwt/triage_ticket_agent_SorawitHuang.git
+%cd triage_ticket_agent_SorawitHuang
 
 4. Install dependencies:
      ```bash
