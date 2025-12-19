@@ -1,7 +1,12 @@
 import numpy as np
 from openai import OpenAI
 
-client = OpenAI()
+# -----------------------------
+# Setup OpenAI client
+# -----------------------------
+api_key = getpass.getpass("Enter your OpenAI API key: ")
+client = OpenAI(api_key=api_key)
+
 
 def cosine_similarity(a, b):
     a = np.array(a)
