@@ -36,7 +36,7 @@ This application demonstrates an interactive, RAG-based support ticket triage sy
 
 6. **Determine Next Action**: The system uses an explainable rule-based on top of the LLM results to decide the appropriate next step:
 
-   - **`auto_respond`**: If the top relevant FAQ or document has a high relevance (≥ 80%) **and** the issue urgency is low or medium, the system provides self-help guidance automatically.  
+   - **`auto_respond`**: If the top relevant FAQ or document has a high relevance (≥ 80%) **and** the issue urgency is low or medium, the system provides **self-help guidance** automatically.  
 
    - **`escalate_to_human`**: If the urgency is critical **or** the customer has already followed up multiple times (≥ 3), the system flags the ticket for immediate human attention.
      
