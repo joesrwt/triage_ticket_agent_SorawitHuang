@@ -49,8 +49,9 @@ Given a `customer_id`, the system:
 2. Clone the repository:
    ```bash
    !git clone https://github.com/<your-username>/triage_ticket_agent_SorawitHuang.git
-   ```bash
-   %cd triage_ticket_agent_SorawitHuang
+
+```bash
+%cd triage_ticket_agent_SorawitHuang
 
 3. Install dependencies:
      ```bash
