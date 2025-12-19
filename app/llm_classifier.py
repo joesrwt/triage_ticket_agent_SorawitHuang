@@ -1,5 +1,6 @@
 import json
 from openai import OpenAI
+import getpass
 
 # -----------------------------
 # Setup OpenAI client
