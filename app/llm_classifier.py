@@ -5,7 +5,7 @@ import getpass
 # -----------------------------
 # Setup OpenAI client
 # -----------------------------
-api_key = getpass.getpass("Enter your OpenAI API key: ")
+api_key = getpass.getpass("(2) Enter your OpenAI API key for using GPT model : gpt-4o-mini")
 client = OpenAI(api_key=api_key)
 
 SYSTEM_PROMPT = """
