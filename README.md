@@ -50,12 +50,12 @@ Given a `customer_id`, the system:
    ```bash
    !git clone https://github.com/<your-username>/triage_ticket_agent_SorawitHuang.git
 
-Then,
+3. 
 
    ```bash
    %cd triage_ticket_agent_SorawitHuang
 
-3. Install dependencies:
+4. Install dependencies:
      ```bash
      !pip install -r requirements.txt
 
@@ -64,6 +64,6 @@ Then,
     ```bash
    !python examples/run_example.py
 
-7. When prompted, paste your OpenAI API key
+6. When prompted, paste your OpenAI API key
 
 
