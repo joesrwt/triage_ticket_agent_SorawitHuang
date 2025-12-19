@@ -50,8 +50,10 @@ Given a `customer_id`, the system:
    ```bash
    !git clone https://github.com/<your-username>/triage_ticket_agent_SorawitHuang.git
 
-```bash
-%cd triage_ticket_agent_SorawitHuang
+Then,
+
+   ```bash
+   %cd triage_ticket_agent_SorawitHuang
 
 3. Install dependencies:
      ```bash
