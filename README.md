@@ -58,8 +58,7 @@ Given a `customer_id`, the system:
 
 5. Run the example:
     ```bash
-   !python examples/run_example.py
-    python -m examples.run_example
+   !python -m examples.run_example
 
 
 6. When prompted, paste your OpenAI API key
