@@ -48,21 +48,17 @@ Given a `customer_id`, the system:
 1. Open **Google Colab**
 2. Clone the repository:
    ```bash
-   !git clone https://github.com/<your-username>/triage_ticket_agent_SorawitHuang.git```
-
-3. 
-
-   ```bash
-   %cd triage_ticket_agent_SorawitHuang```
+   !git clone https://github.com/<your-username>/triage_ticket_agent_SorawitHuang.git
+   %cd triage_ticket_agent_SorawitHuang
 
 4. Install dependencies:
      ```bash
-     !pip install -r requirements.txt```
+     !pip install -r requirements.txt
 
 
 5. Run the example:
     ```bash
-   !python examples/run_example.py```
+   !python examples/run_example.py
 
 6. When prompted, paste your OpenAI API key
 
