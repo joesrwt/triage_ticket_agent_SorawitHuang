@@ -39,7 +39,7 @@ Given a `customer_id`, the system:
 
 ---
 
-## 🚀 How To Run
+## 🚀 How To Run an Example for The Demo
 
 ### 1️⃣ Run on Google Colab
 
@@ -56,7 +56,7 @@ Given a `customer_id`, the system:
 
 5. Run the example:
     ```bash
-   !python -m examples.run_example
+   !python -m examples.run_interactive
 
 
 6. When prompted, paste your OpenAI API key
