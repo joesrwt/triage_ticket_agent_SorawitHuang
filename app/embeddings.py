@@ -5,7 +5,7 @@ import getpass
 # -----------------------------
 # Setup OpenAI client
 # -----------------------------
-api_key = getpass.getpass("Enter your OpenAI API key: ")
+api_key = getpass.getpass("(1) Enter your OpenAI API key for using text-embedding-3-small : ")
 client = OpenAI(api_key=api_key)
 
 
