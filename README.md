@@ -59,6 +59,6 @@ Given a `customer_id`, the system:
    !python -m examples.run_interactive
 
 
-6. When prompted, paste your OpenAI API key
+6. Paste OpenAI API key (1) for 
 
 
