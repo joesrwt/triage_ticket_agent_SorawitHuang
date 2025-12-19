@@ -31,7 +31,7 @@ This application demonstrates an interactive, RAG-based support ticket triage sy
 
    - **Classify**  
      - **Urgency**: critical / high / medium / low  
-     - **Issue Type**: one of the 14 most common support ticket types (e.g., Service Request, Outage, Feature Request, etc.) based on [this guide](https://medium.com/kommunicate/what-is-ticket-triage-in-customer-support-processes-and-tools)  
+     - **Issue Type**: one of the 14 most common support ticket types (e.g., Service Request, Outage, Feature Request, etc.) based on [medium.com/kommunicate/what-is-ticket-triage-in-customer-support-processes-and-tools](https://medium.com/kommunicate/what-is-ticket-triage-in-customer-support-processes-and-tools)  
      - **Customer Sentiment**: positive / frustrated / angry  
 
    - **Extract**  
