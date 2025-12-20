@@ -29,18 +29,37 @@ def triage_ticket(customer_id: str):
 
     max_relevance = max(faq_score, doc_score)
 
-    if max_relevance >= 80 and classification["urgency"] in ["low", "medium"]:
-        next_action = "auto_respond"
-    elif classification["urgency"] == "critical":
+    urgency = classification["urgency"]
+    sentiment = classification["customer_sentiment"]
+
+    # -------------------------
+    # Decision Logic
+    # -------------------------
+
+    # 1. Critical always escalates
+    if urgency == "critical":
         next_action = "escalate_to_human"
+
+    # 2. High urgency + angry sentiment → escalate
+    elif urgency == "high" and sentiment == "angry":
+        next_action = "escalate_to_human"
+
+    # 3. Strong KB confidence & low risk → auto respond
+    elif (
+        max_relevance >= 80
+        and urgency in ["low", "medium"]
+    ):
+        next_action = "auto_respond"
+
+    # 5. Everything else → route_to_specialist
     else:
         next_action = "route_to_specialist"
 
     return {
-        "urgency": classification["urgency"],
+        "urgency": urgency,
         "product": classification["product"],
         "issue_type": classification["issue_type"],
-        "customer_sentiment": classification["customer_sentiment"],
+        "customer_sentiment": sentiment,
         "knowledge_base": {
             "faq": {**faq, "relevance_score_percent": faq_score},
             "doc": {**doc, "relevance_score_percent": doc_score}
