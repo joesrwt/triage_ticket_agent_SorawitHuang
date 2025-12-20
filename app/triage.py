@@ -51,7 +51,7 @@ def triage_ticket(customer_id: str):
     ):
         next_action = "auto_respond"
 
-    # 5. Everything else → route_to_specialist
+    # 4. Everything else → route_to_specialist
     else:
         next_action = "route_to_specialist"
 
