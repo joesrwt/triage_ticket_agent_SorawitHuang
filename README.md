@@ -44,11 +44,21 @@ This application demonstrates an interactive, RAG-based support ticket triage sy
 
 6. **Determine Next Action**: The system uses an explainable rule-based on top of GPT results to decide the appropriate next step:
 
-   - **`auto_respond`**: If the top relevant FAQ or document has a high relevance (≥ 80%) **and** the issue urgency is low or medium, the system provides **self-help guidance** automatically.  
+- **`escalate_to_human`**  
+  Triggered when:
+  - Ticket urgency is **critical**, **or**
+  - Ticket urgency is **high** and the customer sentiment is **angry**  
+  These cases require immediate human attention.
 
-   - **`escalate_to_human`**: If the urgency is critical **or** the customer has already followed up multiple times (≥ 3), the system flags the ticket for immediate human attention.
-     
-   - **`route_to_specialist`**: For all other cases, the system routes the ticket to a specialist team. 
+- **`auto_respond`**  
+  Triggered when:
+  - The top relevant FAQ or document has **high relevance (≥ 80%)**, **and**
+  - Ticket urgency is **low or medium**  
+  The system provides automated self-help guidance.
+
+- **`route_to_specialist`**  
+  Applied to all remaining cases that do not meet the criteria above.  
+  These tickets are routed to a specialist team for further handling.
 
 
 7. **Explainable Output**:  Provides a structured summary of the ticket: 
