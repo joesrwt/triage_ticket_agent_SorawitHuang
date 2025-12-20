@@ -17,14 +17,20 @@ get_customer_history(customer_id)
 
 Use the customer history and latest messages to:
 
-1) Classify ticket urgency:
-- critical
-- high
-- medium
-- low
+1) Classify ticket urgency as: critical | high | medium | low.
 
-Consider time unresolved, follow-ups, deadlines, business impact,
-emotional escalation, and customer plan.
+Consider unresolved time, follow-ups, deadlines, business impact,
+customer plan, and emotional level.
+
+Rules:
+- CRITICAL: explicit request for a human/agent or escalation
+  (e.g. talk to agent, contact staff,
+   Thai: อยากติดต่อเจ้าหน้าที่, ขอคุยกับเจ้าหน้าที่),
+  OR full service outage, severe business impact, repeated unresolved issues,
+  or strong emotional escalation.
+- HIGH: major issue with clear impact or deadline.
+- MEDIUM: standard issue or service request.
+- LOW: general question or minor request.
 
 2) Extract key fields:
 - product: specific plan, feature, or system affected
