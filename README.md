@@ -41,7 +41,7 @@ This application demonstrates an interactive, RAG-based support ticket triage sy
     - **LOW**: general question or minor request.
   - **Issue Type**: one of the 14 most common support ticket categories  
     (e.g., Service Request, Outage, Feature Request, etc.), based on  
-    [kommunicate article](https://medium.com/kommunicate/what-is-ticket-triage-in-customer-support-processes-and-tools-4b9a1343925d).
+    [Medium : Kommunicate article](https://medium.com/kommunicate/what-is-ticket-triage-in-customer-support-processes-and-tools-4b9a1343925d).
   - **Customer Sentiment**: positive / frustrated / angry.
 
 
